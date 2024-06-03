@@ -19,3 +19,4 @@ pool.query(tableQuerys, function (err, rows, fields) {
     if (err) console.log(err);
     console.log("Get Schema !")
 });
+module.exports =pool;
