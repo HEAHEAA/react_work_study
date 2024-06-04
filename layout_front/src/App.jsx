@@ -1,8 +1,7 @@
 import './style/App.css'
 import {Route, Routes} from "react-router-dom";
-import Layouts from "./Layout/Layouts.jsx";
-import 'react-grid-layout/css/styles.css';
-import 'react-resizable/css/styles.css';
+import {Layouts} from "./component/layoutPage/Layouts.jsx";
+import {ReactQueryDevtools} from "react-query/devtools";
 
 function App() {
     return (
@@ -10,6 +9,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Layouts/>}/>
             </Routes>
+            <ReactQueryDevtools initialIsOpen={false} position='bottom-right'/>
         </div>
     )
 }
