@@ -9,7 +9,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Layouts/>}/>
             </Routes>
-            <ReactQueryDevtools initialIsOpen={false} position='bottom-right'/>
+            {/*<ReactQueryDevtools initialIsOpen={false} position='bottom-right'/>*/}
         </div>
     )
 }

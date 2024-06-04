@@ -3,6 +3,9 @@ import GridLayout from 'react-grid-layout';
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
 import {useEffect, useState} from "react";
+import AChart from "../chart/AChart.jsx";
+import BChart from "../chart/BChart.jsx";
+import CChart from "../chart/CChart.jsx";
 
 export const Layouts = () => {
     const {isLoading: layoutLoading, data: layoutList, isError: layoutError} = LayoutData();
@@ -28,7 +31,6 @@ export const Layouts = () => {
             }));
             setLayout(newLayout);
         } else {
-
             setLayout([]); // layoutList 데이터가 없을 때 빈 배열로 설정
         }
     }, [layoutList, dragOpen]);
@@ -65,6 +67,7 @@ export const Layouts = () => {
             }}>화면 편집</button>
             <button style={{marginLeft: 10}}  onClick={() => {
                 handleUpdateLayout();
+                location.reload();
                 alert('저장 완료');
             }}> 화면 저장하기</button>
             <button style={{marginLeft: 10}} onClick={()=> {
@@ -76,7 +79,7 @@ export const Layouts = () => {
             </button>
 
             <GridLayout
-                className="layout"
+                // className="layout"
                 layout={layout}
                 cols={12}
                 rowHeight={30}
@@ -84,9 +87,15 @@ export const Layouts = () => {
                 onLayoutChange={handleLayoutChange}
             >
                 {layout?.map(item => (
-                    <div key={item.i} style={{ border: '1px solid black', position: 'relative' }}>
-                        <div style={{ padding: '10px', marginTop: '30px' }}>
-                            {item.i} (드래그 핸들러 사용)
+                    <div key={item.i}  className="layout">
+                        <header>
+                            <p>Header</p>
+                            <span>UP</span>
+                        </header>
+                        <div className="charts">
+                            {item.i === 'a' ? <AChart/> : (
+                                item.i === 'b' ? <BChart/> : <CChart/>
+                            )}
                         </div>
                     </div>
                 ))}
