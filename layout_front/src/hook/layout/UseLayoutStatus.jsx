@@ -10,3 +10,8 @@ const fetchLayoutData = async () => {
 export const LayoutData = () => {
     return useQuery('layout-data', fetchLayoutData)
 }
+
+export const UpdateLayout = async (layId,body) => {
+    const response = await axios.put(`/api/layout/update/${layId}`, body);
+    return response.data;
+}
