@@ -1,0 +1,23 @@
+.login-box{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.login-success-box{
+    width: 300px;
+    height: 150px;
+    background-color: #ffffff;
+    margin-left: 20px;
+}
+.login-success-box img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    display: inline-block;
+    float: left;
+}
+
+.login-success-box p{
+    margin-top: 30px;
+    margin-left: 60px;
+}

@@ -1,0 +1,12 @@
+{
+  "board": [
+    {
+      "id": "1",
+      "title": "제목1",
+      "content": "내용",
+      "writer": "작성자1",
+      "gender": 1,
+      "heart": "51"
+    }
+  ]
+}

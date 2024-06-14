@@ -1,6 +1,8 @@
 node_modules/
 .idea/
 pool.js
+
+
 # Logs
 logs
 *.log
